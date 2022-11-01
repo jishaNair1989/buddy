@@ -4,9 +4,9 @@ import 'package:buddy1/view/screens/widgets/password_textfld.dart';
 import 'package:buddy1/view/screens/widgets/single_color_title.dart';
 import 'package:buddy1/view/screens/widgets/textfield.dart';
 import 'package:buddy1/view/screens/widgets/txt_btn.dart';
+import 'package:buddy1/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../utils/colors.dart';
 import '../../utils/push_functions.dart';
 import '../../utils/size.dart';
@@ -18,7 +18,6 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final signinController = Provider.of<SigninViewModel>(context);
-    // final forgotController =Provider(create: create)
     return Form(
         key: signinController.signInFormKey2,
         autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -40,7 +39,7 @@ class SignInScreen extends StatelessWidget {
                       KSizedBox.kHeigh_5,
                       const SingleColorTitle(
                         text: 'BUDDY',
-                        color: KColors.kThemeYellow,
+                        color: KColors.kThemePink,
                       ),
                       KSizedBox.kHeigh_15,
                       Consumer<SigninViewModel>(
@@ -102,6 +101,7 @@ class SignInScreen extends StatelessWidget {
                                               .validate();
                                           signinController
                                               .onSigninButton(context);
+                                         
                                           // signinController.disposes();
                                         },
                                       ),

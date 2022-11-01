@@ -11,7 +11,7 @@ class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
     Key? key,
     required this.text,
-    this.color=KColors.kThemeYellow,
+    this.color=KColors.kThemePink,
     required this.onTap,
     this.width = double.infinity,
   }) : super(key: key);

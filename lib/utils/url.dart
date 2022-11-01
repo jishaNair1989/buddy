@@ -6,5 +6,5 @@ class Url {
   static const String verify = '/verify';
   static const String fpwd = '/forgotPassword';
 //  static const String newPost ='/createPost';
-  static const String getAllPosts = 'localhost:8000/getAllPosts';
+  static const String getAllPosts = '/getAllPosts';
 }
