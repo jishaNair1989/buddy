@@ -11,7 +11,7 @@ class TextButtonWidget extends StatelessWidget {
   const TextButtonWidget({
     Key? key,
     this.text = '',
-    this.color = KColors.kThemeYellow,
+    this.color = KColors.kThemePink,
     required this.buttonText,
     required this.onTap,
   }) : super(key: key);

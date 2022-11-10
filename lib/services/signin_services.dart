@@ -17,7 +17,6 @@ class SignInService {
         if (response.statusCode >= 200 && response.statusCode <= 299) {
           // print("got response");
 
-
           return SignInResponseModel.fromJson(response.data);
         } else {
           return SignInResponseModel(
@@ -31,6 +30,9 @@ class SignInService {
           errMsg.toString(),
           style: const TextStyle(color: Colors.red),
         )));
+      } on Exception catch(e) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text("Connection Error ")));
       }
 
       return null;

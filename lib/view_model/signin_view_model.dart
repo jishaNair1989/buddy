@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:buddy1/extensions/string.dart';
+import 'package:buddy1/view/screens/verify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -7,7 +10,6 @@ import '../model/signin/sign_in_resp_model.dart';
 import '../services/signin_services.dart';
 import '../utils/push_functions.dart';
 import '../view/screens/forgot_password.dart';
-import '../view/screens/verify.dart';
 import '../view/screens/widgets/show_dialogue.dart';
 
 class SigninViewModel extends ChangeNotifier {
@@ -47,7 +49,7 @@ class SigninViewModel extends ChangeNotifier {
         _isLoadingFalse();
         return;
       } else if (signInResponse.verified == true) {
-        print(signInResponse.token);
+        //print(signInResponse.token);
         await storedatalogin(value: signInResponse);
         PushFunctions.pushReplace(context, const MainPage());
         ScaffoldMessenger.of(context).showSnackBar(ShowDialogs.popUp(
@@ -57,7 +59,7 @@ class SigninViewModel extends ChangeNotifier {
       } else {
         ScaffoldMessenger.of(context)
             .showSnackBar(ShowDialogs.popUp(signInResponse.message));
-        print(signInResponse.message);
+        log(signInResponse.message.toString());
         _isLoadingFalse();
       }
     }

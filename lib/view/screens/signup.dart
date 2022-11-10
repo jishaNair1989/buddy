@@ -15,12 +15,9 @@ import '../../view_model/signup_view_model.dart';
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
     final signupController = Provider.of<SignUpViewModel>(context);
-
 
     return Scaffold(
       backgroundColor: KColors.kThemeGrey,
@@ -42,7 +39,7 @@ class SignupScreen extends StatelessWidget {
                   KSizedBox.kHeigh_5,
                   const SingleColorTitle(
                     text: 'BUDDY',
-                    color: KColors.kThemeYellow,
+                    color: KColors.kThemePink,
                   ),
                   KSizedBox.kHeigh_15,
                   Consumer<SignUpViewModel>(
@@ -59,20 +56,21 @@ class SignupScreen extends StatelessWidget {
                             TextFieldWidget(
                               hintText: 'Firstname',
                               controller: signupController.firstNameController,
-                              validator: signupController.firstNameValidator, inputType: TextInputType.text,
+                              validator: signupController.firstNameValidator,
+                              inputType: TextInputType.text,
                             ),
                             KSizedBox.kHeigh_20,
                             TextFieldWidget(
-                              hintText: 'Lastname',
-                              controller: signupController.lastNameController,
-                              validator: signupController.lastNameValidator,inputType: TextInputType.text
-                            ),
+                                hintText: 'Lastname',
+                                controller: signupController.lastNameController,
+                                validator: signupController.lastNameValidator,
+                                inputType: TextInputType.text),
                             KSizedBox.kHeigh_20,
                             TextFieldWidget(
-                              hintText: 'Email ID',
-                              controller: signupController.emailController,
-                              validator: signupController.emailValidator,inputType: TextInputType.emailAddress
-                            ),
+                                hintText: 'Email ID',
+                                controller: signupController.emailController,
+                                validator: signupController.emailValidator,
+                                inputType: TextInputType.emailAddress),
                             KSizedBox.kHeigh_20,
                             PasswordTextFieldWidget(
                               hintText: 'Password',
@@ -84,23 +82,19 @@ class SignupScreen extends StatelessWidget {
                             ),
                             KSizedBox.kHeigh_20,
                             TextFieldWidget(
-                              hintText: 'Gender',
-                              controller:
-                              signupController.genderController,
-                              validator:
-                              signupController.genderValidator,inputType: TextInputType.text
-
-                            ),
+                                hintText: 'Gender',
+                                controller: signupController.genderController,
+                                validator: signupController.genderValidator,
+                                inputType: TextInputType.text),
                             KSizedBox.kHeigh_20,
                             value.isLoading
                                 ? const CircularProgressIndicator()
-                                :
-                            ButtonWidget(
-                              text: 'Sign up',
-                              onTap: () {
-                                signupController.onSignupButton(context);
-                              },
-                            ),
+                                : ButtonWidget(
+                                    text: 'Sign up',
+                                    onTap: () {
+                                      signupController.onSignupButton(context);
+                                    },
+                                  ),
                           ],
                         ),
                       ),
