@@ -4,7 +4,6 @@ import 'package:buddy1/view/screens/widgets/password_textfld.dart';
 import 'package:buddy1/view/screens/widgets/single_color_title.dart';
 import 'package:buddy1/view/screens/widgets/textfield.dart';
 import 'package:buddy1/view/screens/widgets/txt_btn.dart';
-import 'package:buddy1/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../utils/colors.dart';

@@ -26,6 +26,9 @@ class GetPostsService {
           ),
         ),
       );
+    } on Exception {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text("Connection Error ")));
     }
     return null;
   }

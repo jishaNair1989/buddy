@@ -1,19 +1,18 @@
-import 'package:buddy1/view/screens/widgets/bottom_nav.dart';
-import 'package:buddy1/view_model/signup_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:provider/provider.dart';
-import '../../services/get_post_service.dart';
-import '../../utils/colors.dart';
-import '../../view_model/bottomNav_view_model.dart';
-import '../../view_model/home_view_model.dart';
 
-class MainProfile extends StatelessWidget {
-  const MainProfile({Key? key}) : super(key: key);
+import '../../../services/get_post_service.dart';
+import '../../../utils/colors.dart';
+import '../../../view_model/bottomNav_view_model.dart';
+import '../../../view_model/home_view_model.dart';
+import '../../../view_model/signup_view_model.dart';
+import '../widgets/curved_nav.dart';
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const storage = FlutterSecureStorage();
     final signupController = Provider.of<SignUpViewModel>(context);
     final provider = Provider.of<BottomNavigationBarProvider>(context);
 
@@ -84,7 +83,7 @@ class MainProfile extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                           ),
                           child: Image.network(
-                              homeController.homeDatas[index].images?.first.url
+                              homeController.homeDatas[index].images?.first
                                   // homeController.homeDatas[index].images?.url
                                   ??
                                   '',
@@ -106,7 +105,6 @@ class MainProfile extends StatelessWidget {
               // PostsView(),
               // ]
             ),
-      bottomNavigationBar: CurvedNavBar(provider),
     ));
   }
 }

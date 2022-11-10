@@ -6,20 +6,20 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class InterceptorHelper {
   FlutterSecureStorage storage = const FlutterSecureStorage();
   Dio dio = Dio(BaseOptions(baseUrl: Url.baseUrl));
+
   Future<Dio> getApiClient() async {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (response, handler) async {
           final token = await getToken();
+
           dio.interceptors.clear();
           response.headers.addAll({
             "Authorization": "Bearer $token",
           });
           return handler.next(response);
         },
-// onResponse: (Response response) {
-//       return response;
-//     },
+        onResponse: ((e, handler) => handler.next(e)),
         onError: (e, handler) async {
           if (e.response?.statusCode == 403) {
             final refreshToken = await getRefreshToken();
@@ -69,5 +69,6 @@ class InterceptorHelper {
 
   Future<void> addToSecureStorage(String value) async {
     await storage.write(key: "token", value: value);
+    //await storage.write(key: 'id', value: value);
   }
 }

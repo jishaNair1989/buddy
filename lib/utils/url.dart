@@ -5,6 +5,6 @@ class Url {
   static const String login = '/login';
   static const String verify = '/verify';
   static const String fpwd = '/forgotPassword';
-//  static const String newPost ='/createPost';
+ static const String newPost ='/createPost';
   static const String getAllPosts = '/getAllPosts';
 }

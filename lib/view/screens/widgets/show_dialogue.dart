@@ -8,7 +8,7 @@ class ShowDialogs {
             borderRadius: BorderRadius.all(Radius.circular(10))),
         duration: const Duration(seconds: 1),
         behavior: SnackBarBehavior.floating,
-        backgroundColor:  Colors.red,
+        backgroundColor: Colors.green,
         margin: const EdgeInsets.all(10),
         content: Padding(
           padding: const EdgeInsets.symmetric(vertical: 6),

@@ -12,7 +12,8 @@ class HomeView extends ChangeNotifier {
       PushFunctions.pushAndRemoveUntil(context, const SignInScreen());
     });
   }
-  List<HomeData> homeDatas = [];
+
+  List<PostData> homeDatas = [];
   bool isLoading = false;
   Future<void> getHomeData(context) async {
     isLoading = true;

@@ -49,7 +49,7 @@ class SigninViewModel extends ChangeNotifier {
         _isLoadingFalse();
         return;
       } else if (signInResponse.verified == true) {
-        print(signInResponse.token);
+        //print(signInResponse.token);
         await storedatalogin(value: signInResponse);
         PushFunctions.pushReplace(context, const MainPage());
         ScaffoldMessenger.of(context).showSnackBar(ShowDialogs.popUp(
