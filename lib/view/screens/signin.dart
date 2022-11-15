@@ -109,11 +109,7 @@ class SignInScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // KSizedBox.kHeigh_20,
-                      // const OrWidget(),
-                      // KSizedBox.kHeigh_10,
-                      // const SignUpWithGoogle(),
-                      // KSizedBox.kHeigh_50,
+           
                     ],
                   ),
                 ),

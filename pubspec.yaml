@@ -45,6 +45,7 @@ dependencies:
   curved_navigation_bar:
   flutter_secure_storage:
   image_picker: ^0.8.6
+  http_parser: ^4.0.2
 
 dev_dependencies:
   flutter_test:

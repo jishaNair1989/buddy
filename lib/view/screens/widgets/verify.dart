@@ -3,10 +3,9 @@ import 'package:buddy1/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../utils/colors.dart';
-import '../../utils/push_functions.dart';
-import '../../view_model/signin_view_model.dart';
-import 'bottom_screens/home_screen.dart';
+import '../../../utils/colors.dart';
+import '../../../utils/push_functions.dart';
+import '../../../view_model/signin_view_model.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -32,7 +31,7 @@ class MainPage extends StatelessWidget {
                   Provider.of<HomeView>(context, listen: false)
                       .getHomeData(context)
                       .then((_) {
-                    PushFunctions.pushReplace(context, const MainScreen()); 
+                    PushFunctions.pushReplace(context, const MainScreen());
                   });
                 },
                 child: const Text('Go to Home'))

@@ -3,7 +3,7 @@ import '../model/signup/sign_up_model.dart';
 import '../model/signup/sign_up_resp_model.dart';
 import '../services/signup_services.dart';
 import '../utils/push_functions.dart';
-import '../view/screens/verify.dart';
+import '../view/screens/widgets/verify.dart';
 import '../view/screens/widgets/show_dialogue.dart';
 
 class SignUpViewModel extends ChangeNotifier {

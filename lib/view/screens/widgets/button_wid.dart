@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../utils/colors.dart';
@@ -11,7 +10,7 @@ class ButtonWidget extends StatelessWidget {
   const ButtonWidget({
     Key? key,
     required this.text,
-    this.color=KColors.kThemePink,
+    this.color = KColors.kThemePink,
     required this.onTap,
     this.width = double.infinity,
   }) : super(key: key);
@@ -24,7 +23,7 @@ class ButtonWidget extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: color,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(15),
           ),
           padding: const EdgeInsets.symmetric(
             vertical: 13,
@@ -34,7 +33,7 @@ class ButtonWidget extends StatelessWidget {
         onPressed: () {
           onTap();
         },
-        child:  Text(
+        child: Text(
           text,
           style: const TextStyle(
             color: KColors.kWhiteColor,

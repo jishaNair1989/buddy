@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bottom_screens/home_screen.dart';
 import 'bottom_screens/message_screen.dart';
+import 'bottom_screens/newPostChoose_screen.dart';
 import 'bottom_screens/profile_screen.dart';
-import 'bottom_screens/choose_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class MainScreen extends StatelessWidget {
   final screens = const [
     HomeScreen(),
     SearchScreen1(),
-    NewPostChooseScreen(),
+    NewpostScreen(),
     MessageScreen(),
     ProfileScreen()
   ];

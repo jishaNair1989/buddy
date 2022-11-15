@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 class DioException implements Exception {
   late String errorMessage;
 
+
   DioException.fromDioError(DioError dioError) {
     switch (dioError.type) {
       case DioErrorType.cancel:
@@ -61,7 +62,12 @@ class DioException implements Exception {
   @override
   String toString() => errorMessage;
 }
+
+extension ApiInt on int {
+  int get statusType => (this / 100).floor() * 100;
+}
+
 extension BetterResponse on Response<dynamic> {
   ///returs true if status code between 200 and 299
-  //bool get isOk => statusCode != null ? statusCode!.statusType == 200 : false;
-} 
+  bool get isOk => statusCode != null ? statusCode!.statusType == 200 : false;
+}

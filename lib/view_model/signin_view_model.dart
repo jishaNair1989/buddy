@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:buddy1/extensions/string.dart';
-import 'package:buddy1/view/screens/verify.dart';
+import 'package:buddy1/view/screens/widgets/verify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -105,14 +105,14 @@ class SigninViewModel extends ChangeNotifier {
   }
 }
 
-forgotPassword(BuildContext context) {
-  final emailController = TextEditingController();
-  PushFunctions.push(
-      context,
-      ForgotPasswordScreen(
-        email: emailController.text.isEmail ? emailController.text : null,
-      ));
-}
+// forgotPassword(BuildContext context) {
+//   final emailController = TextEditingController();
+//   PushFunctions.push(
+//       context,
+//       ForgotPasswordScreen(
+//         email: emailController.text.isEmail ? emailController.text : null,
+//       ));
+// }
 
 String? checkEmail(String? val) {
   if (val == null) return null;

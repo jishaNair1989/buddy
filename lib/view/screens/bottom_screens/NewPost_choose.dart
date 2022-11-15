@@ -40,45 +40,6 @@ class NewPostChooseScreen extends StatelessWidget {
                       })
                 ],
               ),
-              // FutureBuilder<List<String>>(
-              //   future: PlatformService().getRecentImages(count: 40),
-              //   builder: (context, snapshot) {
-              //     if (snapshot.hasData && snapshot.data != null) {
-              //       final images = snapshot.data!;
-              //       return GridView.builder(
-              //           physics: const NeverScrollableScrollPhysics(),
-              //           shrinkWrap: true,
-              //           gridDelegate:
-              //               const SliverGridDelegateWithFixedCrossAxisCount(
-              //             crossAxisCount: 3,
-              //           ),
-              //           itemCount: images.length,
-              //           itemBuilder: (context, indext) {
-              //             File imageFile = File(images[indext]);
-              //             return GestureDetector(
-              //               onTap: () {
-              //                 // PushFunctions.pushReplace(
-              //                 //     context,
-              //                 // NewPostScreen(
-              //                 //  imageFile: imageFile,
-              //                 // ));
-              //               },
-              //               child: Image.file(
-              //                 imageFile,
-              //                 fit: BoxFit.cover,
-              //                 filterQuality: FilterQuality.low,
-              //                 cacheWidth: 300,
-              //                 width: double.infinity,
-              //               ),
-              //             );
-              //           });
-              //     }
-              //     if (snapshot.connectionState == ConnectionState.waiting) {
-              //       return const CircularProgressIndicator();
-              //     }
-              //     return const SizedBox();
-              //   },
-              // ),
             ],
           ),
         ),

@@ -6,7 +6,6 @@ import '../../../utils/colors.dart';
 import '../../../view_model/bottomNav_view_model.dart';
 import '../../../view_model/home_view_model.dart';
 import '../../../view_model/signup_view_model.dart';
-import '../widgets/curved_nav.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -68,7 +67,9 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                           title: Text(
-                            homeController.homeDatas[index].user!.username!,
+                            homeController
+                                    .homeDatas[index].user?.username??
+                                'Name is not available',
                             style: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.bold),
                           ),
@@ -83,7 +84,7 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(5)),
                           ),
                           child: Image.network(
-                              homeController.homeDatas[index].images?.first
+                              homeController.homeDatas[index].images?.first.url
                                   // homeController.homeDatas[index].images?.url
                                   ??
                                   '',

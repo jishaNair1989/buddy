@@ -7,18 +7,25 @@ class TextFieldWidget extends StatelessWidget {
   final TextEditingController controller;
   final String? Function(String?)? validator;
   final TextInputType keyType;
+  final int? minLines;
+  final int? maxLines;
   const TextFieldWidget({
     Key? key,
     required this.hintText,
     required this.controller,
-    required this.validator,
+    this.validator,
     this.keyType = TextInputType.emailAddress,
     required TextInputType inputType,
+     this. minLines,
+    this. maxLines,
+    
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+minLines: minLines,
+maxLines: maxLines, 
       controller: controller,
       validator: validator,
       decoration: InputDecoration(

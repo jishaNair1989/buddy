@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Slots {
-final captionController = TextEditingController();
+class Slots extends User {
+  final captionController = TextEditingController();
   List<PostData>? listOfSlots;
   String? message;
+  String? userId;
   Slots({
     this.listOfSlots,
     this.message,
@@ -64,9 +65,8 @@ class PostData {
   Map<String, dynamic> toJson() => {
         "_id": id,
         "type": type,
-        "images": images == null
-            ? null
-            : List<dynamic>.from(images!.map((x) => x)), 
+        "images":
+            images == null ? null : List<dynamic>.from(images!.map((x) => x)),
         "user": user!.toJson(),
         "Comments": List<dynamic>.from(comments!.map((x) => x)),
         "createdAt": createdAt!.toIso8601String(),
@@ -163,3 +163,8 @@ class User {
         "gender": gender,
       };
 }
+
+List<Slots> postsFromJson(List list) =>
+    List<Slots>.from(list.map((x) => Slots.fromJson(x)));
+
+

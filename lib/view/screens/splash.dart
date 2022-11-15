@@ -1,19 +1,21 @@
 import 'dart:async';
 
-import 'package:buddy1/view/screens/signin.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../utils/colors.dart';
-import '../../utils/push_functions.dart';
+import '../../view_model/splash_view_model.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final splashController = Provider.of<SplashViewModel>(context);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       Timer(const Duration(seconds: 2), () {
-        PushFunctions.pushReplace(context, const SignInScreen());
+        splashController.authCheck(context);
+        // PushFunctions.pushReplace(context, const SignInScreen());
       });
     });
     return Scaffold(
