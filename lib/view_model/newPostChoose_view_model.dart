@@ -1,10 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:cloudinary_public/cloudinary_public.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:image_picker/image_picker.dart';
 
 class NewPostChooseViewModel extends ChangeNotifier {
+  final cloudinary = CloudinaryPublic('dhdsnaxj0', 't7ff3xnj', cache: false);
   bool isLoading = false;
   final File? image = null;
   File? imageFile;
@@ -25,13 +27,6 @@ class NewPostChooseViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  onPostButton() {}
-
-//   final createService = CreatePostService();
-//   creatNewPost(context) {
-//     //createService.createPost( )
-//   }
-
   Future<void> _choosePhoto(BuildContext context, source) async {
     final ImagePicker picker = ImagePicker();
     picker
@@ -46,10 +41,19 @@ class NewPostChooseViewModel extends ChangeNotifier {
       if (image != null) {
         log('done=======');
         imageFile = File(image.path);
-
-        //  PushFunctions.pushReplace( NewPostScreen(imageFile: imageFile,));
       }
     });
+    try {
+      CloudinaryResponse response = await cloudinary.uploadFile(
+        CloudinaryFile.fromFile(image!.path,
+            resourceType: CloudinaryResourceType.Image),
+      );
+
+      print(response.secureUrl);
+    } on CloudinaryException catch (e) {
+      print(e.message);
+      print(e.request);
+    }
   }
 }
 

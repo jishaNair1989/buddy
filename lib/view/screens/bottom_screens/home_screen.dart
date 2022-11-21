@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../utils/colors.dart';
 import '../../../view_model/bottomNav_view_model.dart';
 import '../../../view_model/home_view_model.dart';

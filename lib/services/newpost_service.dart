@@ -20,8 +20,8 @@ class NewPost {
       FormData formData = FormData.fromMap({
         "image": await MultipartFile.fromFile(post.file,
             filename: fileName, contentType: MediaType('image', format)),
-        //"caption": post.comments,
-        // 'userId': post.userId
+        "caption": post.comments,
+         'userId': post.userId
       });
       //dio.options.contentType = 'multipart/form-data';
       //dio.options.headers['Content-Type'] = 'multipart/form-data';
