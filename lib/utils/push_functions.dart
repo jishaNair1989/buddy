@@ -15,7 +15,12 @@ class PushFunctions {
         .pushReplacement(MaterialPageRoute(builder: (context) => page));
   }
 
-  static pop(context){
+  static pop(context) {
     Navigator.pop(context);
+  }
+
+  static pushReplacement(context, page) {
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => page));
   }
 }

@@ -3,9 +3,9 @@ import 'package:buddy1/view_model/home_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../utils/colors.dart';
-import '../../../utils/push_functions.dart';
-import '../../../view_model/signin_view_model.dart';
+import '../../utils/colors.dart';
+import '../../utils/push_functions.dart';
+import '../../view_model/signin_view_model.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

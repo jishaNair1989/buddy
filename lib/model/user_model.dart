@@ -7,12 +7,12 @@ String userToJson(User data) => json.encode(data.toJson());
 class User {
   User({
      this.token,
-     this.id,
+     required this.id,
      this.refreshToken,
   });
 
   final String? token;
-  final String? id;
+  final String id;
   final String? refreshToken;
 
   factory User.fromJson(Map<String, dynamic> json) => User(

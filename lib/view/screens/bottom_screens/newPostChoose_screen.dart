@@ -1,10 +1,9 @@
 import 'dart:io';
-
-import 'package:buddy1/services/new_post_service.dart';
 import 'package:buddy1/view/screens/widgets/button_wid.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../view_model/newPostChoose_view_model.dart';
+import '../../../view_model/nupost_view_model.dart';
 import '../widgets/newPostChoose.dart';
 import '../widgets/textfield.dart';
 
@@ -15,7 +14,7 @@ class NewpostScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final newPostChooseController =
         Provider.of<NewPostChooseViewModel>(context);
-    // final newPostController = Provider.of<NewPostViewModel>(context);
+    final newPost = Provider.of<NewpostView>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -68,9 +67,12 @@ class NewpostScreen extends StatelessWidget {
             ButtonWidget(
                 text: 'POST',
                 onTap: () {
+                  newPost.onPost(
+                      context, newPostChooseController.imageFile?.path ?? '');
                   // newPostController.post(
                   //     context, newPostChooseController.imageFile?.path ?? '');
-                  NewPostService().postImage();
+                  // NewPostService().postImage();
+                  //NewPost().postImage(context,imageFile.path);
                 })
           ]),
         ),

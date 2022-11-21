@@ -6,33 +6,6 @@ import 'package:flutter/material.dart';
 import '../utils/url.dart';
 import 'dio_exceptions.dart';
 
-// class GetPostsService {
-//   Future<Slots?> getPostRepo(context) async {
-//     Dio dio = await InterceptorHelper().getApiClient();
-//     try {
-//       final Response response = await dio.get(Url.getAllPosts);
-//       log(response.data.toString());
-//       if (response.statusCode! >= 200 && response.statusCode! <= 299) {
-//         log(response.data.toString());
-//         return Slots.fromJson(response.data);
-//       }
-//     } on DioError catch (e) {
-//       final errMsg = DioException.fromDioError(e).toString();
-//       ScaffoldMessenger.of(context).showSnackBar(
-//         SnackBar(
-//           content: Text(
-//             errMsg.toString(),
-//             style: const TextStyle(color: Colors.red),
-//           ),
-//         ),
-//       );
-//     } on Exception {
-//       ScaffoldMessenger.of(context)
-//           .showSnackBar(const SnackBar(content: Text("Connection Error ")));
-//     }
-//     return null;
-//   }
-// }
 
 class GetPostsService {
   Future<List<AllPostsModel>?> getPostRepo(context) async {

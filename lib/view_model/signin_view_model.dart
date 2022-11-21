@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:buddy1/extensions/string.dart';
-import 'package:buddy1/view/screens/widgets/verify.dart';
+import 'package:buddy1/view/screens/verify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 

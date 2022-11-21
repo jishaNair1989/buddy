@@ -6,5 +6,6 @@ class Url {
   static const String fpwd = '/forgotPassword';
   static const String newPost = '/createPost';
   static const String getAllPosts = '/getAllPosts';
-  static const String post = 'http://10.0.2.2:8000/createPost';
+  static const String post = '/createPost';
+  static const String imageUpload = '/uploadImages';
 }

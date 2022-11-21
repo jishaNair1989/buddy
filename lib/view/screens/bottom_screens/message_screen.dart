@@ -6,9 +6,17 @@ class MessageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(title: const Text('Messages')),
         body: ListView.builder(
-      itemBuilder: (context, index) => const ListTile(),
-      itemCount: 10,
-    ));
+          itemBuilder: (context, index) => Dismissible(
+            key: Key(index.toString()),
+            child: const ListTile(
+              leading: CircleAvatar(),
+              subtitle: Text('message'),
+              trailing: Icon(Icons.delete),
+            ),
+          ),
+          itemCount: 10,
+        ));
   }
 }

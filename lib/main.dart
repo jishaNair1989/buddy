@@ -2,7 +2,7 @@ import 'package:buddy1/view/screens/splash.dart';
 import 'package:buddy1/view_model/bottomNav_view_model.dart';
 import 'package:buddy1/view_model/home_view_model.dart';
 import 'package:buddy1/view_model/newPostChoose_view_model.dart';
-import 'package:buddy1/view_model/newPost_view_model.dart';
+import 'package:buddy1/view_model/nupost_view_model.dart';
 import 'package:buddy1/view_model/signin_view_model.dart';
 import 'package:buddy1/view_model/signup_view_model.dart';
 import 'package:buddy1/view_model/splash_view_model.dart';
@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
             create: (context) => BottomNavigationBarProvider()),
         ChangeNotifierProvider(create: (context) => SplashViewModel()),
         ChangeNotifierProvider(create: (context) => NewPostChooseViewModel()),
+        ChangeNotifierProvider(create: (context) => NewpostView()),
         // ChangeNotifierProvider(create: (context) => NewPostViewModel()),
       ],
       child: MaterialApp(
