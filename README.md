@@ -1,16 +1,1 @@
-# buddy1
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Hello Everyone, Buddy is a social media application using flutter as front end and node js as backend. The application contains user authentication, postcreation, live chating, push notification, and most importantly, storing data to database and handling by api. The project is following MVVM architecture and using Provider as state management.
