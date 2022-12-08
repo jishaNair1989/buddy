@@ -35,7 +35,7 @@ class SignUpViewModel extends ChangeNotifier {
         password: passwordController.text,
         gender: genderController.text,
       );
-      SignUpResponseModel? signUpResponse =
+      SignupResponseModel? signUpResponse =
           await SignUpService().signUpRepo(obj, context);
       if (signUpResponse == null) {
         ScaffoldMessenger.of(context)
@@ -44,14 +44,14 @@ class SignUpViewModel extends ChangeNotifier {
 
         return;
 //review later
+      } else if (signUpResponse.verified != false) {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(ShowDialogs.popUp(signUpResponse.message.toString()));
+        _isLoadingFalse();
+        return;
       } else if (signUpResponse.verified == false) {
         PushFunctions.push(context, const MainPage());
         _isLoadingFalse();
-      } else if (signUpResponse.verified != false) {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(ShowDialogs.popUp(signUpResponse.message));
-        _isLoadingFalse();
-        return;
       } else {
         ScaffoldMessenger.of(context)
             .showSnackBar(ShowDialogs.popUp('Something went wrong !!!'));

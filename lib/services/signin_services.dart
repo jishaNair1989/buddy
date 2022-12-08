@@ -30,7 +30,7 @@ class SignInService {
           errMsg.toString(),
           style: const TextStyle(color: Colors.red),
         )));
-      } on Exception catch(e) {
+      } on Exception catch(_) {
         ScaffoldMessenger.of(context)
             .showSnackBar(const SnackBar(content: Text("Connection Error ")));
       }

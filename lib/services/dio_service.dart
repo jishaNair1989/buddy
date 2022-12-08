@@ -10,20 +10,4 @@ class DioService {
       return value;
     });
   }
-
-//   static Future<Response> getMethod(
-//       {required String url, required value}) async {
-//     return await dio.get(url).then((value) {
-//       return value;
-//     });
-//   }
-
-//   static Future<Response> geT(
-//       {required String url}) async {
-//     return await dio.get(url).then((value) {
-//       return value;
-//     });
-//   }
- }
-
-
+}

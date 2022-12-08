@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../extensions/testTb.dart';
+import '../../../extensions/test_tb.dart';
 
 // class ProfileScreen extends StatelessWidget {
 //   const ProfileScreen({super.key});
@@ -95,7 +95,6 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: ListView(
         children: const [

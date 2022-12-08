@@ -1,4 +1,26 @@
-class SignUpResponseModel {
+// To parse this JSON data, do
+//
+//     final signupModel = signupModelFromJson(jsonString);
+
+import 'dart:convert';
+
+SignupResponseModel signupModelFromJson(String str) =>
+    SignupResponseModel.fromJson(json.decode(str));
+
+class SignupResponseModel {
+  SignupResponseModel({
+    this.id,
+    this.username,
+    this.picture,
+    this.firstName,
+    this.lastName,
+    this.token,
+    this.verified,
+    this.isBlocked,
+    this.register,
+    this.message,
+  });
+
   String? id;
   String? username;
   String? picture;
@@ -7,22 +29,10 @@ class SignUpResponseModel {
   String? token;
   bool? verified;
   bool? isBlocked;
-  String message;
+  bool? register;
+  String? message;
 
-  SignUpResponseModel({
-    this.id,
-    this.username,
-    this.picture,
-    this.firstName,
-    this.lastName,
-    this.token,
-    required this.verified,
-    this.isBlocked,
-    required this.message,
-  });
-
-  factory SignUpResponseModel.fromJson(Map<String, dynamic> json) =>
-      SignUpResponseModel(
+  factory SignupResponseModel.fromJson(Map<String, dynamic> json) => SignupResponseModel(
         id: json["id"],
         username: json["username"],
         picture: json["picture"],
@@ -31,6 +41,7 @@ class SignUpResponseModel {
         token: json["token"],
         verified: json["verified"],
         isBlocked: json["isBlocked"],
+        register: json["register"],
         message: json["message"],
       );
 }

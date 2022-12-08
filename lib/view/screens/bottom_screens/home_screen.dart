@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../utils/colors.dart';
-import '../../../view_model/bottomNav_view_model.dart';
 import '../../../view_model/home_view_model.dart';
-import '../../../view_model/signup_view_model.dart';
 import '../widgets/home_builder.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,10 +9,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final signupController = Provider.of<SignUpViewModel>(context);
-    final provider = Provider.of<BottomNavigationBarProvider>(context);
+    // final signupController = Provider.of<SignUpViewModel>(context);
+    // final provider = Provider.of<BottomNavigationBarProvider>(context);
 
-    final homeController = Provider.of<HomeView>(context);
+    final homeController = Provider.of<HomeViewModel>(context);
     return SafeArea(
         child: Scaffold(
       appBar: PreferredSize(

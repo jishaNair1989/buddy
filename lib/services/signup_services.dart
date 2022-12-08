@@ -9,15 +9,15 @@ import 'dio_exceptions.dart';
 import 'dio_service.dart';
 
 class SignUpService {
-  Future<SignUpResponseModel?> signUpRepo(SignUpModel data, context) async {
+  Future<SignupResponseModel?> signUpRepo(SignUpModel data, context) async {
     if (await internetCheck()) {
       try {
         final response =
             await DioService.postMethod(url: Url.signup, value: data.toJson());
         if (response.statusCode! >= 200 && response.statusCode! <= 299) {
-          return SignUpResponseModel.fromJson(response.data);
+          return SignupResponseModel.fromJson(response.data);
         } else {
-          return SignUpResponseModel(
+          return SignupResponseModel(
               message: 'Something Went Wrong', verified: true);
         }
       } on DioError catch (e) {

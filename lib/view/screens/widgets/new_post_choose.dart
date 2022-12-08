@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class newPostOpt extends StatelessWidget {
-  const newPostOpt({
+class NewPostOpt extends StatelessWidget {
+  const NewPostOpt({
     Key? key,
     required this.text,
     required this.icon,
@@ -19,8 +19,6 @@ onTap: onPressed,
         children: [
           Text(text),
            Icon(icon),
-     
-          
         ],
       ),
     );

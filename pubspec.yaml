@@ -37,16 +37,19 @@ dependencies:
   provider: ^6.0.4
   bordered_text: ^2.0.0
   dio: ^4.0.6
-  internet_connection_checker:
-  mailer: ^5.2.0
-  smtpd: ^0.2.0
-  toast: ^0.3.0
-  email_auth: ^1.0.0
+  # internet_connection_checker:
+  # mailer: ^5.2.0
+  # smtpd: ^0.2.0
+  # toast: ^0.3.0
+  # email_auth: ^1.0.0
   curved_navigation_bar:
   flutter_secure_storage:
   image_picker: ^0.8.6
   http_parser: ^4.0.2
-  cloudinary_public: ^0.20.0
+  # cloudinary_public: ^0.20.0
+  shimmer: ^2.0.0
+  cached_network_image: ^3.2.1
+  internet_connection_checker:
 
 dev_dependencies:
   flutter_test:

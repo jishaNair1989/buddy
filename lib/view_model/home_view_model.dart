@@ -8,15 +8,12 @@ import 'package:buddy1/view/screens/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class HomeView extends ChangeNotifier {
+class HomeViewModel extends ChangeNotifier {
   void onLogoutButton(context) async {
-    // await Future.delayed(const Duration(seconds: 1), () {
     const FlutterSecureStorage storage = FlutterSecureStorage();
-
-    await storage.write(key: 'login', value: 'false');
+    await storage.write(key: 'token', value: '');
     PushFunctions.pushAndRemoveUntil(context, const SignInScreen());
-    //}
-// );
+ 
   }
 
   //List<PostData> homeDatas = [];

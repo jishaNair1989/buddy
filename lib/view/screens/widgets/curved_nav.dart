@@ -1,9 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../view_model/bottomNav_view_model.dart';
+import '../../../view_model/bottom_nav_view_model.dart';
 
-CurvedNavigationBar CurvedNavBar(BottomNavigationBarProvider provider) {
+CurvedNavigationBar curvedNavBar(BottomNavigationBarProvider provider) {
   return CurvedNavigationBar(
     // key: bottomNavigationKey,z
 

@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -10,30 +11,28 @@ class AuthProvider with ChangeNotifier {
   User? user;
   static User? currUser;
   final storage = const FlutterSecureStorage();
-  final String USER_ID = 'user.id';
-  final String USER_REFRESH = 'user.refresh';
-  final String USER_TOKEN = 'user.token';
+  final String userId = 'user.id';
+  final String userRefresh = 'user.refresh';
+  final String userToken = 'user.token';
 
   saveUser(User user) {
     this.user = AuthProvider.currUser = user;
-    storage.write(key: USER_ID, value: user.id);
-    storage.write(key: USER_TOKEN, value: user.token);
-    storage.write(key: USER_REFRESH, value: user.refreshToken);
+    storage.write(key: userId, value: user.id);
+    storage.write(key: userToken, value: user.token);
+    storage.write(key: userRefresh, value: user.refreshToken);
     //log('saved user');
     notifyListeners();
   }
 
   Future<User?> loadUser() async {
     Map<String, String> values = await storage.readAll();
-    String? id = values[USER_ID];
-    String? token = values[USER_TOKEN];
-    String? refresh = values[USER_REFRESH];
+    String? id = values[userId];
+    String? token = values[userToken];
+    String? refresh = values[userRefresh];
     if (id != null && refresh != null && token != null) {
       user = AuthProvider.currUser =
           User(token: token, id: id, refreshToken: refresh);
       notifyListeners();
-      //log(id);
-      //log(token);
     }
     return user;
   }

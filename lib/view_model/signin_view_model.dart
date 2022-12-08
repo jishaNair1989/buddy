@@ -1,22 +1,26 @@
 import 'dart:developer';
 
 import 'package:buddy1/extensions/string.dart';
-import 'package:buddy1/view/screens/verify.dart';
+import 'package:buddy1/view_model/userAuth_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:provider/provider.dart';
 
 import '../model/signin/sign_in_model.dart';
 import '../model/signin/sign_in_resp_model.dart';
+import '../model/user_model.dart';
 import '../services/signin_services.dart';
 import '../utils/push_functions.dart';
-import '../view/screens/forgot_password.dart';
+import '../view/screens/mainscreen.dart';
 import '../view/screens/widgets/show_dialogue.dart';
+import 'home_view_model.dart';
 
 class SigninViewModel extends ChangeNotifier {
   GlobalKey<FormState> signInFormKey2 = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isLoading = false;
+  final User? user = AuthProvider.currUser;
 
   // make text obscure for passwords
   bool _isObscure = false;
@@ -34,7 +38,7 @@ class SigninViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void onSigninButton(context) async {
+  Future<void> onSigninButton(context) async {
     if (signInFormKey2.currentState!.validate()) {
       isLoading = true;
       notifyListeners();
@@ -50,10 +54,16 @@ class SigninViewModel extends ChangeNotifier {
         return;
       } else if (signInResponse.verified == true) {
         //print(signInResponse.token);
-        await storedatalogin(value: signInResponse);
-        PushFunctions.pushReplace(context, const MainPage());
-        ScaffoldMessenger.of(context).showSnackBar(ShowDialogs.popUp(
-            'Login success ! please activate your email to start'));
+        ScaffoldMessenger.of(context)
+            .showSnackBar(ShowDialogs.popUp('Login success ! '));
+        await storeLoginData(value: signInResponse);
+        await Provider.of<HomeViewModel>(context, listen: false)
+            .getHomeData(context)
+            .then((_) {
+//save User
+          //context.read<AuthProvider>().saveUser(user);
+          PushFunctions.pushReplace(context, const MainScreen());
+        });
         _isLoadingFalse();
         disposes();
       } else {
@@ -98,9 +108,7 @@ class SigninViewModel extends ChangeNotifier {
   }
 
   FlutterSecureStorage storage = const FlutterSecureStorage();
-  Future<void> storedatalogin({required SignInResponseModel value}) async {
-    notifyListeners();
-
+  Future<void> storeLoginData({required SignInResponseModel value}) async {
     await storage.write(key: 'token', value: value.token!);
   }
 }

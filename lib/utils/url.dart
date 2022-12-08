@@ -6,6 +6,11 @@ class Url {
   static const String fpwd = '/forgotPassword';
   static const String newPost = '/createPost';
   static const String getAllPosts = '/getAllPosts';
+  static const String getAllUsers = '/getAllUsers';
   static const String post = '/createPost';
   static const String imageUpload = '/uploadImages';
+  static const String listImg = '/listImages';
+  static const String search = '/findUser';
+static const String conversations = '/conversations';
+static const String createMessage = '/message';
 }
